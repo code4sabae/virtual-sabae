@@ -11,10 +11,10 @@
   <a-assets timeout="10000">
     <a-asset-item id="sabae" src="https://code4sabae.github.io/sabae-pj3d/sabae-pj3d-all-notex.gltf"></a-asset-item>
   </a-assets>
-  <a-entity gltf-model="#sabae" position="0 -7.4 0"></a-entity>
+  <a-entity gltf-model="#sabae" position="0 -8.3 0"></a-entity>
   <!--<a-plane color="#ccc" height="300" width="300" rotation="-90 0 0"></a-plane>-->
   <a-entity id="cameraRig">
-    <a-entity id="head" camera position="0 1 0" wasd-controls look-controls></a-entity>
+    <a-entity id="head" camera position="0 1.7 0" wasd-controls look-controls></a-entity>
     <a-entity oculus-touch-controls="hand:left" teleport-controls="button:trigger; collisionEntities:.collidable; cameraRig:#cameraRig; teleportOrigin:#head;"></a-entity>
     <a-entity oculus-touch-controls="hand:right" teleport-controls="button:trigger; collisionEntities:.collidable; cameraRig:#cameraRig; teleportOrigin:#head;"></a-entity>
   </a-entity>
