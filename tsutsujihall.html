@@ -3,6 +3,8 @@
 <head>
   <title>バーチャル鯖江プロジェクト</title>
   <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+  <!-- https://github.com/fernandojsg/aframe-teleport-controls -->
+  <script src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
 </head>
 <body>
 <a-scene>
@@ -10,7 +12,11 @@
     <a-asset-item id="sabae" src="https://code4sabae.github.io/sabae-pj3d/sabae-pj3d-tsutsujihall.gltf"></a-asset-item>
   </a-assets>
   <a-entity gltf-model="#sabae" position="0 -12 0"></a-entity>
-  <a-camera position="0 0 0"></a-camera>
+  <a-entity id="cameraRig">
+    <a-entity id="head" camera position="0 1.6 0" wasd-controls look-controls></a-entity>
+    <a-entity oculus-touch-controls="hand:left" teleport-controls="button:trigger; collisionEntities:.collidable; cameraRig:#cameraRig; teleportOrigin:#head;"></a-entity>
+    <a-entity oculus-touch-controls="hand:right" teleport-controls="button:trigger; collisionEntities:.collidable; cameraRig:#cameraRig; teleportOrigin:#head;"></a-entity>
+  </a-entity>
 </a-scene>
 </body>
 </html>
