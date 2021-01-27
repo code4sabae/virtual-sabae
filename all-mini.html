@@ -7,12 +7,22 @@
   <script src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
 </head>
 <body>
-<a-scene>
+<a-scene background="color: #008DCB">
   <a-assets timeout="10000">
-    <a-asset-item id="sabae" src="https://code4sabae.github.io/sabae-pj3d/sabae-pj3d-all-notex.gltf"></a-asset-item>
+    <a-asset-item id="sabae-obj" src="https://code4sabae.github.io/sabae-pj3d/sabae-pj3d-abci/sabae.obj"></a-asset-item>
+    <a-asset-item id="sabae-mtl" src="https://code4sabae.github.io/sabae-pj3d/sabae-pj3d-abci/sabae.mtl"></a-asset-item>
+    
+    <!--
+    <a-asset-item id="sabae-obj" src="https://code4sabae.github.io/sabae-pj3d/sabae-pj3d-all.obj"></a-asset-item>
+    <a-asset-item id="sabae-mtl" src="https://code4sabae.github.io/sabae-pj3d/sabae-pj3d-all.mtl"></a-asset-item>
+    -->
   </a-assets>
-  <a-entity gltf-model="#sabae" position="0 -0.83 0" scale="0.1 0.1 0.1"></a-entity>
-  <!--<a-plane color="#ccc" height="300" width="300" rotation="-90 0 0"></a-plane>-->
+  <a-entity obj-model="obj: #sabae-obj; mtl: #sabae-mtl" position="0 -0.83 0" rotation="-90 0 0" scale="0.1 0.1 0.1"></a-entity>
+  <!--<a-entity light="type: directional; color: #FFF; intensity: 0.4" position="-0.5 1 1"></a-entity>-->
+  <a-entity light="type: directional; color: #FFF; intensity: 0.4" position="0.5 1 -1"></a-entity>
+  <!--<a-entity light="type: directional; color: #fff; intensity: 0.5" position="1 10 0" rotation="90 0 0"></a-entity>-->
+  <a-entity light="type: ambient; color: #fff; intensity: 1"></a-entity>
+    <!--<a-plane color="#ccc" height="300" width="300" ></a-plane>-->
   <a-entity id="cameraRig">
     <a-entity id="head" camera position="0 1.7 0" wasd-controls look-controls></a-entity>
     <a-entity oculus-touch-controls="hand:left" teleport-controls="button:trigger; collisionEntities:.collidable; cameraRig:#cameraRig; teleportOrigin:#head;"></a-entity>
